@@ -23,7 +23,7 @@ public class BirthApplicationEnrichment {
     private UserUtil userUtils;
 
     public void enrichBirthApplication(BirthRegistrationRequest birthRegistrationRequest) {
-        List<String> birthRegistrationIdList = idgenUtil.getIdList(birthRegistrationRequest.getRequestInfo(), birthRegistrationRequest.getBirthRegistrationApplications().get(0).getTenantId(), "btr.registrationid", "", birthRegistrationRequest.getBirthRegistrationApplications().size());
+        List<String> birthRegistrationIdList = idgenUtil.getIdList(birthRegistrationRequest.getRequestInfo(), birthRegistrationRequest.getBirthRegistrationApplications().get(0).getTenantId(), "product.id", "P-[cy:yyyy-MM-dd]-[SEQ_PRODUCT_P]", birthRegistrationRequest.getBirthRegistrationApplications().size());
         Integer index = 0;
         for(BirthRegistrationApplication application : birthRegistrationRequest.getBirthRegistrationApplications()) {
             // Enrich audit details
